@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace ProductOrderingSystem
+namespace ProductOrderingSystem.Models
 {
     public class ProductDB : DbContext
     {
