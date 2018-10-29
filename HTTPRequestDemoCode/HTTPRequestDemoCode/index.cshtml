@@ -4,16 +4,37 @@
     <title></title>
 </head>
 <body>
-    <form method="get">
-        <input type="text" name="firstName" />
+    @*<form method="get">
+            <input type="text" name="firstName" />
+            <input type="submit" value="Enter" />
+
+            @{
+                string ResponseValue = Request.QueryString["firstName"];
+
+                if (ResponseValue != null)
+                {
+                    Response.Write("Hello " + ResponseValue);
+                }
+            }
+
+        </form>*@
+
+    <form method="post">
+        <input type="text" name="username" />
+        <input type="text" name="password" />
         <input type="submit" value="Enter" />
 
         @{
-            string ResponseValue = Request.QueryString["firstName"];
+            string username = Request.Form["username"];
+            string password = Request.Form["password"];
 
-            if (ResponseValue != null)
+            if ((username != null && password != null) && (username == "admin" && password == "letmein"))
             {
-                Response.Write("Hello " + ResponseValue);
+                Response.Write("Hello " + username);
+            }
+            else
+            {
+                Response.Write("Incorrect username and/or password.");
             }
         }
 
