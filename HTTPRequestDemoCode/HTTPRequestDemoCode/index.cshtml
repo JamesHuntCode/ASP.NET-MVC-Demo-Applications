@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="get">
+        <input type="text" name="firstName" />
+        <input type="submit" value="Enter" />
+
+        @{
+            string ResponseValue = Request.QueryString["firstName"];
+
+            if (ResponseValue != null)
+            {
+                Response.Write("Hello " + ResponseValue);
+            }
+        }
+
+    </form>
+</body>
+</html>
